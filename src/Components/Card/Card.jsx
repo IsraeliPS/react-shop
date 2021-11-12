@@ -1,15 +1,16 @@
-import CardTitle from "./CardTitle";
+import CardTitle from "./CardTitle/CardTitle";
 import PrimaryButton from "../buttons/PrimaryButton";
 import CardImage from "./CardImage";
 import CardText from "./CardText";
 import SecondaryButton from "../buttons/SecondaryButton";
 
-const Card = ({ titulo, img, text, linkBtn }) => {
+const Card = ({ titulo, img, text, linkBtn ,oferta=false}) => {
+  
   return (
-    <div class="card" style={{ width: "18rem;" }}>
+    <div className="card" style={{ width: "18rem" }}>
       <CardImage url={img} alt={"tamal"}></CardImage>
-      <div class="card-body">
-        <CardTitle titulo={titulo} />
+      <div className="card-body">
+        <CardTitle titulo={titulo} oferta={oferta}/>
 
         <CardText text={text}></CardText>
         <SecondaryButton url={linkBtn} type={"primary"}></SecondaryButton>
