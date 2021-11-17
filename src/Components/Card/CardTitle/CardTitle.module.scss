@@ -1,4 +1,14 @@
-.primaryTitle {
+@import "../Variables.scss";
+
+.title {
     font-size: 20px;
-    color: burlywood;
+    text-align: center;
+}
+
+.oferta{
+    color:$green;
+  }
+
+  .sinOferta{
+    color: $red;
   }

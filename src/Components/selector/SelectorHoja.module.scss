@@ -1,0 +1,56 @@
+@import "../Card/Variables.scss";
+
+.hoja {
+  display: inline-block;
+  // width: 100%;
+  margin: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.title {
+  font-weight: bold;
+  margin: 5px 0;
+  padding: 5px 0;
+  width: 200px;
+  color: $red;
+  border-radius: 10px;
+  background-color: $yellow;
+  text-align: center;
+}
+
+
+.Button {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+}
+
+.fondo {
+  margin: 8px 0px;
+  padding: 10px 10px;
+  color: $letra;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-around;
+}
+
+.ConHoja{
+  color: lighten($negro, 10%);
+  background: $green;
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+
+.SinHoja{
+  color: lighten($red, 60%);
+  background: $cajeta;
+  border-radius: 10px;
+  padding: 10px 10px;
+}

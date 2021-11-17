@@ -1,0 +1,19 @@
+@import "../Card/Variables.scss";
+
+.box{
+  color:$blanco;
+
+}
+
+.box select {
+    background-color: #286B8F;
+    color: $negro;
+    padding: 5px;
+    width: 200px;
+    border: none;
+    font-size: 18px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    appearance: button;
+    outline: none;
+  }
+  

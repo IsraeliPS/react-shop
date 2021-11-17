@@ -1,6 +1,14 @@
-.container{
-    background-color: yellow;
-    .primaryTitle{
-        color:red;
-    }
+@import "../Card/Variables.scss";
+
+.primaryTitle{
+    font-size: 12px;
+    cursor: pointer;
+    margin:10px 20px;
+    padding: 8px 15px;
+    background-color: $yellow;
+    border-radius: 15px;
+    width: 100%;
+
+    color:$red;
+    font-weight: bold;
 }
