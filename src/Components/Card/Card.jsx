@@ -48,9 +48,4 @@ const Card = ({ titulo, img, text, price, linkBtn, oferta = false }) => {
 
 export default Card;
 
-/*
-1) Hacer la tarea del jueves (personalizar sus cards con SASS)
-2) Agregar (con estados) Un selector de tamales [hoja de plátano | hoja de maiz] Si son oaxaqueños, el precio debe aumentar $10
-3) Agregar (con estados) Un selector para incluir o no atole. Si es con atole, agregar $15
-4) Si agergan atole, permitir elegir el sabor [ fresa | cajeta | chocolate ]
-*/
+

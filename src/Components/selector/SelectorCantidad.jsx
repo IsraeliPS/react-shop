@@ -3,13 +3,13 @@ import styles from "./SelectorCantidad.module.scss";
 
 const SelectorCantidad = ({setCantidad}) => {
 
-    const handlerCambio =(event)=> {
-        setCantidad(event.target.value)
-    }
+    // const handlerCambio =(event)=> {
+    //     setCantidad(event.target.value)
+    // }
     
   return (
     <div className={`${styles.box}`}>
-      <select onChange={handlerCambio}>
+      <select onChange={(event)=> setCantidad(event.target.value)}>
         <option>1</option>
         <option>2</option>
         <option>3</option>

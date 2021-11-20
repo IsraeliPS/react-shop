@@ -7,7 +7,7 @@ const SelectorAtole = () => {
   const handleFresa = () => setSabor("Fresa");
   const handleChocolate = () => setSabor("Chocolate");
   const handleCajeta = () => setSabor("Cajeta");
-
+console.log(sabor)
   return (
     <div className={`${styles.atole}`}>
       <p className={`${styles.title}`}>ATOLE</p>
