@@ -1,29 +1,26 @@
 import "./App.css";
-import Card from "./Components/Card/Card";
-import fetchItems from "./services/fetchItems"
+import React,{useState}  from "react";
 import { Route, Routes, Link } from "react-router-dom";
-
+import Atoles from "./Components/atole/atoles";
+import Index from "./Components/landing/index";
+import Tamales from "./Components/tamales/TamalesIndex";
+// import ShoppingCar from "./Components/ShoppingCar/ShoppingCar";
 
 function App() {
-  
-  const item=fetchItems();
-  
+  const [global, setGlobal] = useState({})
   return (
-    <div className="container">
-      <div className="row">
-        {
-          item.map(({titulo,img,text,price,url,oferta})=>
-              <Card
-                titulo={titulo}
-                img={img}
-                text={text}
-                price={price}
-                linkBtn={url}
-                oferta={oferta}
-                />
-          )
-        }
-      </div>      
+    <div>
+      <nav>
+        <Link to="/">Inicio</Link>
+        <Link to="/tamales" >Tamales</Link>
+        <Link to="/atoles" >Atoles</Link>
+      </nav>
+      
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/tamales" element={<Tamales global={global} setGlobal={setGlobal}/>} />
+        <Route path="/atoles" element={<Atoles global={global} setGlobal={setGlobal}/>} />
+      </Routes>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-@import "../Card/Variables.scss";
+@import "../../Variables.scss";
 
 * {
   margin: 2px;
@@ -18,7 +18,7 @@ body {
   margin: 10px;
 
   .card_body {
-    height: 350px;
+    height: 190px;
     background: $blanco;
     border-radius: 0 0 25px 25px;
   }

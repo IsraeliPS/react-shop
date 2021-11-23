@@ -1,7 +1,20 @@
-import styles from "./PrimaryButton.module.scss"
+import styles from "./PrimaryButton.module.scss";
 
-const PrimaryButton=({text,url})=>{
-    return <a href={url} type="button" className={`${styles.primaryTitle}`}>{text}</a>
-}
+const PrimaryButton = ({ text, url, setCantidad, id, cantidad }) => {
+  const handlerAdd = () => {
+    setCantidad(cantidad + 1);
+  };
 
-export default PrimaryButton
+  return (
+    <a
+      href={url}
+      type="button"
+      onClick={handlerAdd}
+      className={`${styles.button}`}
+    >
+      {text}
+    </a>
+  );
+};
+
+export default PrimaryButton;

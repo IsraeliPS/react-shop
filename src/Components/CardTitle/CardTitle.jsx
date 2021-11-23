@@ -1,10 +1,9 @@
 import styles from "./CardTitle.module.scss";
 
-const CardTitle = ({ titulo, oferta }) => {
+const CardTitle = ({ titulo}) => {
   const title = titulo.toUpperCase();
-  
   return (
-    <h5  className={`${styles.title} ${oferta? styles.oferta : styles.sinOferta} `}>
+    <h5  className={`${styles.title}`}>
       {title}
     </h5>
   );

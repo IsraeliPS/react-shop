@@ -1,17 +1,16 @@
-@import "../Card/Variables.scss";
+@import "../../Variables.scss";
 
-.hoja {
+.atole {
   display: inline-block;
-  // width: 100%;
+//   width: 100%;
   margin: 5px;
   border-radius: 10px;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .title {
   font-weight: bold;
-  margin: 5px 0;
   padding: 5px 0;
   width: 200px;
   color: $red;
@@ -20,7 +19,6 @@
   text-align: center;
 }
 
-
 .Button {
   position: absolute;
   visibility: hidden;
@@ -28,29 +26,27 @@
 }
 
 .fondo {
-  margin: 8px 0px;
-  padding: 10px 10px;
+  padding: 6px 10px;
   color: $letra;
   display: inline-block;
   cursor: pointer;
   font-weight: bold;
 }
 
-.flex{
-  display: flex;
-  justify-content: space-around;
-}
-
-.ConHoja{
-  color: lighten($negro, 10%);
-  background: $green;
+.Fresa {
+  color: lighten($red, 60%);
+  background: $fresa;
   border-radius: 10px;
-  padding: 10px 10px;
 }
 
-.SinHoja{
+.Cajeta {
   color: lighten($red, 60%);
   background: $cajeta;
   border-radius: 10px;
-  padding: 10px 10px;
+}
+
+.Chocolate {
+  color: lighten($red, 60%);
+  background: $chocolate;
+  border-radius: 10px;
 }
