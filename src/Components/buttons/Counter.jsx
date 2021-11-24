@@ -1,27 +1,13 @@
 import React from "react";
 import styles from "./Counter.module.scss";
 
-const Counter = ({ id, cantidad, setCantidad, setGlobal, global}) => {
+const Counter = ({onAddToCart, onRemoveCart , cantidad=0}) => {
   const handlerAdd = () => {
-    setCantidad(cantidad + 1);
-    // let valor = { ...global,id: id, cantidad: cantidad + 1 };
-    // setGlobal(valor);
-    // console.log("suma", valor);
+    onAddToCart();
   };
-  // const onLikeClick = (id) => {
-  //   const newProducts = products.map((product) => {
-  //     if (product.id !== id) return product;
-  //     else return { ...product, like: !product.like };
-  //   });
-  //   setProducts(newProducts);
-  // };
-  // console.log("imprimiendo global",global);
 
   const handlerRest = () => {
-    setCantidad(cantidad - 1);
-    // let valor = { ...global,id: id, cantidad: cantidad + 1 };
-    // setGlobal(valor);
-    // console.log("suma", valor);
+    onRemoveCart();
   };
 
   return (

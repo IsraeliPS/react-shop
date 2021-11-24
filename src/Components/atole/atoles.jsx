@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Card from "./CardAtole/CardAtole";
-import ShoppingCar from "../ShoppingCar/ShoppingCar";
+// import ShoppingCar from "../ShoppingCar/ShoppingCar";
 
 const AtolesData = "https://api-cafe-tamales.herokuapp.com/api/atoles";
 
@@ -26,7 +26,7 @@ const AtoleIndex = () => {
 
   return (
     <div className="container">
-      <ShoppingCar global={global}/>
+      
       <div className="row">
         {atole.map(({ _id, name, img, price }) => (
           <Card key={_id} titulo={name} img={img} price={price} />

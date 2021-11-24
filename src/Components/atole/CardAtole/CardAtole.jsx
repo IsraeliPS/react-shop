@@ -14,7 +14,7 @@ const CardAtole = ({ id, titulo, img, price }) => {
   // const PriceAtole = checked ? 15 : 0;
   // const ConOferta=oferta?(price + PriceHoja + PriceAtole)*.1:0
 
-  // const totalPrice = (parseInt(price) + PriceHoja )*cantidad;
+  const totalPrice = parseInt(price)*cantidad;
 
   return (
     <div className={`${styles.card}`}>
@@ -22,12 +22,8 @@ const CardAtole = ({ id, titulo, img, price }) => {
 
       <div className={`${styles.card_body}`}>
         <CardTitle titulo={titulo} />
-        {/* <CardText text={text} /> */}
-        {/* <SelectorCantidad setCantidad={setCantidad} /> */}
-        {/* <SelectorHoja platano={platano} setPlatano={setPlatano} /> */}
-        {/* <SelectorSiAtole checked={checked} setChecked={setChecked} />
-
-        {checked && <SelectorAtole />} */}
+        
+        <div className={`${styles.precio}`}> Precio por Producto: {price}</div>
         {cantidad ? (
           <Counter id={id} cantidad={cantidad} setCantidad={setCantidad} />
         ) : (
@@ -38,7 +34,7 @@ const CardAtole = ({ id, titulo, img, price }) => {
             cantidad={cantidad}
           />
         )}
-        <div className={`${styles.price}`}>Total: $ {price}</div>
+        <div className={`${styles.total}`}>Total: $ {totalPrice}</div>
       </div>
     </div>
   );

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card/Card";
-import ShoppingCar from "../ShoppingCar/ShoppingCar";
+// import ShoppingCar from "../ShoppingCar/ShoppingCar";
 
 const TamalesData = "https://api-cafe-tamales.herokuapp.com/api/tamales";
 
-const TamalesIndex = ({ global, setGlobal }) => {
+const TamalesIndex = ({ addToCart, cartItems, removeFromCart }) => {
   const [tamal, setTamal] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+
   useEffect(() => {
     let ComponentExist = true;
     fetch(TamalesData)
@@ -15,16 +16,8 @@ const TamalesIndex = ({ global, setGlobal }) => {
         res
           .json()
           .then((data) => {
-            let Items = Object.values(data);
-
-            let TamalesItems = [];
-            for (let x of Items) {
-              for (let y of x) {
-                TamalesItems = [...TamalesItems, y];
-              }
-            }
             if (ComponentExist) {
-              setTamal(TamalesItems);
+              setTamal(data.tamal);
               setLoading(false);
             }
           })
@@ -38,27 +31,38 @@ const TamalesIndex = ({ global, setGlobal }) => {
       ComponentExist = false;
     };
   }, []);
+
   if (error) {
     return <div>Error al obtener los datos. Favor de recargar la página</div>;
   }
 
   if (loading) return <h2>Please wait...</h2>;
-
+  
+console.log(cartItems)
   return (
     <div className="container">
-      <ShoppingCar global={global} />
       <div className="row">
-        {tamal.map(({ _id, name, img, price }) => (
-          <Card
-            global={global}
-            setGlobal={setGlobal}
-            key={_id}
-            id={_id}
-            titulo={name}
-            img={img}
-            price={price}
-          />
-        ))}
+        {tamal.map((item) => {
+          const { _id, name, img, price } = item;
+          const cantidad = cartItems[_id];
+          
+          const onAddToCart = () =>  addToCart({ id: _id, price })
+          const onRemoveCart = () => removeFromCart({ id: _id, price });
+          
+          return (
+            <Card
+              key={_id}
+              id={_id}
+              titulo={name}
+              img={img}
+              price={price}
+              onAddToCart={onAddToCart}
+              cartItems={cartItems}
+              cantidad={cantidad}
+              onRemoveCart={onRemoveCart}
+            />
+          );
+        })}
       </div>
     </div>
   );

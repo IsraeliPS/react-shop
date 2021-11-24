@@ -1,17 +1,30 @@
 import React from "react";
 
-const ShoppingCar = ({ global, onEmptyCar = () => {} }) => {
-  
-
-  return (
+const ShoppingCar = ({emptyCart}) => {
+return (
     <div >
       🛒
-      {"creando"}
+      <button onClick={emptyCart}>🗑 Borrar Carrito</button>
     </div>
   );
 };
 
 export default ShoppingCar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 console.clear();
 let cart = {};
@@ -89,3 +102,4 @@ removeFromCart(catalog[1])
 
 console.log("cartFinal: ", cart);
 */
+
