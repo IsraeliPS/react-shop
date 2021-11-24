@@ -1,36 +1,28 @@
 import React from "react";
+import styles from "./ShoppingCar.module.scss";
 
-const ShoppingCar = ({emptyCart, cartItems}) => {
-  const cantidad=Object.keys(cartItems).length
-  let total=0
-  for (let val in cartItems){
-    total+=parseInt(cartItems[val].price)
+const ShoppingCar = ({ emptyCart, cartItems }) => {
+  let cantidad = 0;
+  let total = 0;
+  for (let val in cartItems) {
+    total += parseInt(cartItems[val].price);
+    cantidad += cartItems[val].qty;
   }
 
-return (
-    <div >
-      🛒<span>{cantidad}</span><span>Total a pagar: {total}</span>
+  return (
+    <div className={`${styles.ShoppingCar}`}>
+      <div>
+        <span className={`${styles.materialIcons}`}>shopping_cart</span>
+        <span>{cantidad}</span>
+        <div>Total a pagar: {total}</div>
+      </div>
 
-      <button onClick={emptyCart}>🗑 Borrar Carrito</button>
+      <button className={`${styles.button} ${styles.materialIcons}`} onClick={emptyCart}>delete</button>
     </div>
   );
 };
 
 export default ShoppingCar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 console.clear();
@@ -109,4 +101,3 @@ removeFromCart(catalog[1])
 
 console.log("cartFinal: ", cart);
 */
-

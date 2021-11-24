@@ -4,7 +4,7 @@ import Card from "./CardAtole/CardAtole";
 
 const AtolesData = "https://api-cafe-tamales.herokuapp.com/api/atoles";
 
-const AtoleIndex = (addToCart, cartItems, removeFromCart) => {
+const AtoleIndex = ({addToCart, cartItems, removeFromCart}) => {
   const [atole, setAtole] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -46,7 +46,7 @@ const AtoleIndex = (addToCart, cartItems, removeFromCart) => {
 
           const cantidad = cartItems[_id] ? cartItems[_id].qty : 0;
 
-          const onAddToCart = () => addToCart({ id: _id, price,img });
+          const onAddToCart = () => addToCart({ id: _id, price ,img});
           const onRemoveCart = () => removeFromCart({ id: _id, price });
 
           return (

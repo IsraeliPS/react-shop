@@ -1,0 +1,51 @@
+.ShoppingCar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: azure;
+  z-index: 2;
+  width: 300px;
+  height: 80px;
+}
+
+.button {
+  border: none;
+  background: none;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+  &:hover{
+    color: rgba(0, 0, 0, 0.54);
+
+  }
+}
+
+.materialIcons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  z-index: 10;
+  font-style: normal;
+  font-size: 36px; /* Preferred icon size */
+  display: inline-block;
+  // line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
