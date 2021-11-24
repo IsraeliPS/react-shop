@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Counter.module.scss";
 
-const Counter = ({onAddToCart, onRemoveCart , cantidad=0}) => {
+const Counter = ({ onAddToCart, onRemoveCart, cantidad = 0 }) => {
   const handlerAdd = () => {
     onAddToCart();
   };

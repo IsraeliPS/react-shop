@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card/Card";
-// import ShoppingCar from "../ShoppingCar/ShoppingCar";
 
 const TamalesData = "https://api-cafe-tamales.herokuapp.com/api/tamales";
 
@@ -36,19 +35,19 @@ const TamalesIndex = ({ addToCart, cartItems, removeFromCart }) => {
     return <div>Error al obtener los datos. Favor de recargar la página</div>;
   }
 
-  if (loading) return <h2>Please wait...</h2>;
-  
-console.log(cartItems)
+  if (loading) return <h2>Please wait a moment...</h2>;
+
   return (
     <div className="container">
       <div className="row">
         {tamal.map((item) => {
           const { _id, name, img, price } = item;
-          const cantidad = cartItems[_id];
-          
-          const onAddToCart = () =>  addToCart({ id: _id, price })
+
+          const cantidad = cartItems[_id] ? cartItems[_id].qty : 0;
+
+          const onAddToCart = () => addToCart({ id: _id, price ,img});
           const onRemoveCart = () => removeFromCart({ id: _id, price });
-          
+
           return (
             <Card
               key={_id}

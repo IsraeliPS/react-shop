@@ -1,9 +1,16 @@
 import React from "react";
 
-const ShoppingCar = ({emptyCart}) => {
+const ShoppingCar = ({emptyCart, cartItems}) => {
+  const cantidad=Object.keys(cartItems).length
+  let total=0
+  for (let val in cartItems){
+    total+=parseInt(cartItems[val].price)
+  }
+
 return (
     <div >
-      🛒
+      🛒<span>{cantidad}</span><span>Total a pagar: {total}</span>
+
       <button onClick={emptyCart}>🗑 Borrar Carrito</button>
     </div>
   );

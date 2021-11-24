@@ -1,17 +1,8 @@
 import styles from "./PrimaryButton.module.scss";
 
-const PrimaryButton = ({
-  text,
-  url,
-  setCantidad,
-  id,
-  cantidad,
-  onAddToCart,
-}) => {
+const PrimaryButton = ({ text, url, id, onAddToCart }) => {
   const handlerAdd = () => {
-    setCantidad(cantidad + 1);
     onAddToCart();
-    
   };
 
   return (

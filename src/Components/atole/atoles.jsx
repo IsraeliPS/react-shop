@@ -1,39 +1,71 @@
 import React, { useEffect, useState } from "react";
 
 import Card from "./CardAtole/CardAtole";
-// import ShoppingCar from "../ShoppingCar/ShoppingCar";
 
 const AtolesData = "https://api-cafe-tamales.herokuapp.com/api/atoles";
 
-const AtoleIndex = () => {
+const AtoleIndex = (addToCart, cartItems, removeFromCart) => {
   const [atole, setAtole] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch(AtolesData).then((res) => {
-      res.json().then((data) => {
-        let Items = Object.values(data);
+    let ComponentExist = true;
+    fetch(AtolesData)
+      .then((res) => {
+        res
+          .json()
+          .then((data) => {
+            if (ComponentExist) {
+              setAtole(data.atol);
+              setLoading(false);
+            }
+          })
+          .catch(() => {
+            setError(true);
+          });
+      })
+      .finally(() => setLoading(false));
 
-        let AtolesItems = [];
-        for (let x of Items) {
-          for (let y of x) {
-            AtolesItems = [...AtolesItems, y];
-          }
-        }
-        setAtole(AtolesItems);
-      });
-    });
+    return () => {
+      ComponentExist = false;
+    };
   }, []);
+
+  if (error) {
+    return <div>Error al obtener los datos. Favor de recargar la página</div>;
+  }
+
+  if (loading) return <h2>Please wait a moment...</h2>;
 
   return (
     <div className="container">
-      
       <div className="row">
-        {atole.map(({ _id, name, img, price }) => (
-          <Card key={_id} titulo={name} img={img} price={price} />
-        ))}
+        {atole.map((item) => {
+          const { _id, name, img, price } = item;
+
+          const cantidad = cartItems[_id] ? cartItems[_id].qty : 0;
+
+          const onAddToCart = () => addToCart({ id: _id, price,img });
+          const onRemoveCart = () => removeFromCart({ id: _id, price });
+
+          return (
+            <Card
+              key={_id}
+              titulo={name}
+              img={img}
+              price={price}
+              onAddToCart={onAddToCart}
+              cantidad={cantidad}
+              cartItems={cartItems}
+              onRemoveCart={onRemoveCart}
+            />
+          );
+        })}
       </div>
     </div>
   );
 };
 
 export default AtoleIndex;
+//

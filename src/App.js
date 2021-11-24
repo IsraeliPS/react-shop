@@ -60,7 +60,7 @@ function App() {
         <Link to="/tamales">Tamales</Link>
         <Link to="/atoles">Atoles</Link>
       </nav>
-      <ShoppingCar emptyCart={emptyCart} />
+      <ShoppingCar emptyCart={emptyCart} cartItems={cartItems} />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route

@@ -1,18 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./CardAtole.module.scss";
 import CardImage from "../../CardImage/CardImage";
 import CardTitle from "../../CardTitle/CardTitle";
 import PrimaryButton from "../../buttons/PrimaryButton";
 import Counter from "../../buttons/Counter";
 
-const CardAtole = ({ id, titulo, img, price }) => {
-  // const [platano, setPlatano] = useState(false);
-  // // const [checked, setChecked] = useState(false);
-  const [cantidad, setCantidad] = useState(0);
+const CardAtole = ({ id, titulo, img, price ,cantidad, onAddToCart,onRemoveCart }) => {
 
-  // const PriceHoja = platano ? 10 : 0;
-  // const PriceAtole = checked ? 15 : 0;
-  // const ConOferta=oferta?(price + PriceHoja + PriceAtole)*.1:0
+  
 
   const totalPrice = parseInt(price)*cantidad;
 
@@ -25,13 +20,15 @@ const CardAtole = ({ id, titulo, img, price }) => {
         
         <div className={`${styles.precio}`}> Precio por Producto: {price}</div>
         {cantidad ? (
-          <Counter id={id} cantidad={cantidad} setCantidad={setCantidad} />
+          <Counter id={id} cantidad={cantidad}  onAddToCart={onAddToCart}
+          onRemoveCart={onRemoveCart}/>
         ) : (
           <PrimaryButton
-            setCantidad={setCantidad}
+            
             text="Comprar"
             id={id}
             cantidad={cantidad}
+            onAddToCart={onAddToCart}
           />
         )}
         <div className={`${styles.total}`}>Total: $ {totalPrice}</div>
