@@ -1,0 +1,23 @@
+.bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: azure;
+  border-radius: 15px;
+  width: 230px;
+  height: 30px;
+}
+
+.iconSearch {
+  font-family: "Material Icons";
+  font-size: 24px;
+}
+
+.box {
+  border: none;
+  font-weight: normal;
+  font-style: normal;
+  background: none;
+  color: inherit;
+  outline: inherit;
+}

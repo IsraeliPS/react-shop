@@ -1,19 +1,21 @@
-import React from "react"
+import React from 'react'
+import styles from './Search.module.scss'
 
-const Search =()=>{
-
-    return
+const Search = () => {
+  return (
     <div>
-        <input className="" 
-        type="text" 
-        placeholder="Search" 
-        aria-label="Search"
-        // value={buscar}
-        // onChange={(e)=>setBuscar(e.target.value)}
-        >
+      <div className={`${styles.bar}`}>
 
-        </input>
+        <input
+          className={`${styles.box}`}
+          type='text'
+          placeholder='Buscar Producto'
+          aria-label='Search'
+        />
+        <span className={`${styles.iconSearch}`}>search</span>
+      </div>
     </div>
+  )
 }
 
-export default Search;
+export default Search

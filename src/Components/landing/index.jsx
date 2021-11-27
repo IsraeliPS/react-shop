@@ -1,6 +1,7 @@
 import React from 'react'
 
-const index = () => {
+const index = ({cartItems}) => {
+    
     return (
         <div>
             <h1>Hola</h1>
