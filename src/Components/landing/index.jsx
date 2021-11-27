@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import styles from './Index.module.scss'
 
 import {
   Carousel,
@@ -12,7 +11,7 @@ import {
 
 const items = [
   {
-    src: 'https://i.ytimg.com/vi/hlCOYkD37ic/maxresdefault.jpg',
+    src: 'https://tamalesmexicanos.net/wp-content/uploads/2019/07/maxresdefault.jpg',
     altText: 'Tamales'
   },
   {
@@ -25,7 +24,7 @@ const items = [
   }
 ]
 
-const Index = ({ cartItems }) => {
+const Index = () => {
   const [activeIndex, setActiveIndex] = useState(0)
   const [animating, setAnimating] = useState(false)
 
@@ -53,14 +52,13 @@ const Index = ({ cartItems }) => {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.src} alt={item.altText} />
-        {/* <CarouselCaption captionText={item.caption} captionHeader={item.caption} /> */}
+        <img src={item.src} alt={item.altText} style={{ height: '300px', alignItems: 'center' }} />
       </CarouselItem>
     )
   })
 
   return (
-    <div style={{ display: 'block', width: 'auto', height: '10px', padding: 30 }}>
+    <div className='container-fluid d-flex justify-content-center w-50 align-items-center'>
       <Carousel activeIndex={activeIndex} next={next} previous={previous}>
         <CarouselIndicators
           items={items}
@@ -80,6 +78,7 @@ const Index = ({ cartItems }) => {
         />
       </Carousel>
     </div>
+
   )
 }
 
