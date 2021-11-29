@@ -3,10 +3,14 @@
 .card {
   border:thin solid #dedede;
   
-  width: 15rem;
+  width: 15rem !important;
   padding: 10px;
   margin: 10px;
   background: $blanco;
+
+  .img{
+    width: 20px;
+  }
 
   .card_body {
     height: 180px;

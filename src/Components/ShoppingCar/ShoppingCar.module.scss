@@ -28,8 +28,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 20px;
-  margin-bottom: 20px;
+  // margin: 0 10px;
+  margin-bottom: 10px;
 }
 
 .cartItemImg {
@@ -42,20 +42,17 @@
 .cartItemDetail {
   display: flex;
   flex: 1;
-  padding: 0 20px;
+  padding: 0 30px;
   flex-direction: column;
 }
 
 .contador{
   position: absolute;
-  top:10px;
-  left: 10px;
   font-size: 12px;
   padding: 0 5px;
+  margin: 0;
   background-color: $amarillo;
   border-radius: 50px;
-  
-  
 }
 
 .materialIcons {

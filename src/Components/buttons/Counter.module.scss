@@ -1,20 +1,28 @@
 @import "../Variables.scss";
 
 .styleContainer {
-  margin: "5px";
-  font-size: "20px";
-  background-color: white;
+  margin: 5px;
+  font-size: 20px;
+  background-color: $blanco;
   border: 2px solid $walmart;
-    
-  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .styleButton{
-background-color: white;
+background-color: $blanco;
 border: none;
+font-size: 16px;
+&:hover{
+  background-color:lighten($walmart,30%) ;
+  border-radius: 5px;
+  
+}
 }
 
 .styleQty {
   margin: 0 43px;
-  background-color: white;
+  background-color: $blanco;
 }

@@ -1,32 +1,38 @@
 @import "./Components/Variables.scss";
 @import "~bootstrap/scss/bootstrap";
 
-// .container {
-//   width: auto;
-// }
-
-// .row{
-//   display:flex;
-//   flex-wrap: wrap;
-//   justify-content: space-around;
-//   align-items: center;
-//   width: auto;
-// }
-
 .nav{
   display: flex;
   flex-direction: row;
-  justify-content:space-between;
+  justify-content:space-around;
   align-items: center;
   color: $negro;
+  width: auto;
   // cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
   text-decoration: none;
+  background-color: #0176d5;
+  padding: 10px;
 }
 
 .imagen {
   background-color: $blanco;
   border-radius: 10px;
   width: 100px;
+}
+
+.links{
+  background-color:$walmart;
+  width: auto;
+}
+
+.link{
+  text-decoration: none;
+  text-emphasis: none;
+  color:$negro;
+  padding: 10px 10px;
+  &:hover{
+    color:$blanco
+  }
 }

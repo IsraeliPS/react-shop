@@ -15,7 +15,7 @@ const Card = ({ id, titulo, img, price, cantidad, onAddToCart, onRemoveCart }) =
       <div className={`${styles.card_body}`}>
         <CardTitle titulo={titulo} />
 
-        <div className={`${styles.precio}`}>Precio ${price}</div>
+        <div className={`${styles.precio}`}>Precio por unidad :${price}</div>
 
         {cantidad
           ? (

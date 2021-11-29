@@ -10,12 +10,12 @@ import Counter from '../../buttons/Counter'
 const CardAtole = ({ id, titulo, img, price, cantidad, onAddToCart, onRemoveCart }) => {
   return (
     <div className={`${styles.card}`}>
-      <CardImage url={img} alt='Atole' />
+      <CardImage className={`${styles.img}`} url={img} alt='Atole' />
 
       <div className={`${styles.card_body}`}>
         <CardTitle titulo={titulo} />
 
-        <div className={`${styles.precio}`}> Precio por Producto: {price}</div>
+        <div className={`${styles.precio}`}> Precio por unidad: {price}</div>
 
         {cantidad
           ? (

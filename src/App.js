@@ -87,11 +87,11 @@ function App () {
         />
       </nav>
 
-      <Link to='/tamales'>Tamales</Link>
-      <Link to='/atoles'>Atoles</Link>
-      <Link to='/Productos/:id'>Productos/:id</Link>
-
-      <div />
+      <div className={`${styles.links}`}>
+        <Link to='/tamales' className={`${styles.link}`}>Tamales</Link>
+        <Link to='/atoles' className={`${styles.link}`}>Atoles</Link>
+        <Link to='/Productos/:id' className={`${styles.links}`}>Productos/:id</Link>
+      </div>
 
       <Routes>
         <Route path='/' element={<Index cartItems={cartItems} />} />
