@@ -21,13 +21,13 @@ const Card = ({ id, titulo, img, price, cantidad, onAddToCart, onRemoveCart }) =
 
         {cantidad
           ? (
-            <div>  <Counter
-              id={id}
-              cantidad={cantidad}
-
-              onAddToCart={onAddToCart}
-              onRemoveCart={onRemoveCart}
-                   />
+            <div>
+              <Counter
+                id={id}
+                cantidad={cantidad}
+                onAddToCart={onAddToCart}
+                onRemoveCart={onRemoveCart}
+              />
               <br />
               <div className={`${styles.total}`}>Total: $ {totalPrice}</div>
               <br />
