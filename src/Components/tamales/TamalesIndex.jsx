@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Card from './Card/Card'
 
-const TamalesData = 'https://api-cafe-tamales.herokuapp.com/api/tamales'
+const TamalesData = 'https://desafio-react-13.herokuapp.com/products/type/tamales'
 
 const TamalesIndex = ({ addToCart, cartItems, removeFromCart }) => {
   const [tamal, setTamal] = useState([])
@@ -16,7 +16,8 @@ const TamalesIndex = ({ addToCart, cartItems, removeFromCart }) => {
           .json()
           .then((data) => {
             if (ComponentExist) {
-              setTamal(data.tamal)
+              // setTamal(data.tamal)
+              setTamal(data.payload.productType)
               setLoading(false)
             }
           })
@@ -41,7 +42,8 @@ const TamalesIndex = ({ addToCart, cartItems, removeFromCart }) => {
     <>
       <div className='row'>
         {tamal.map((item) => {
-          const { _id, name, img, price } = item
+          const { _id, description: name, image: img, price } = item
+          // const { _id, name, img, price } = item
 
           const cantidad = cartItems[_id] ? cartItems[_id].qty : 0
 
