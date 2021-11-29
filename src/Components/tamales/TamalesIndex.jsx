@@ -38,7 +38,7 @@ const TamalesIndex = ({ addToCart, cartItems, removeFromCart }) => {
   if (loading) return <h2>Please wait a moment...</h2>
 
   return (
-    <div className='container'>
+    <>
       <div className='row'>
         {tamal.map((item) => {
           const { _id, name, img, price } = item
@@ -46,7 +46,7 @@ const TamalesIndex = ({ addToCart, cartItems, removeFromCart }) => {
           const cantidad = cartItems[_id] ? cartItems[_id].qty : 0
 
           const onAddToCart = () => addToCart({ id: _id, price, name, img })
-          console.log({ id: _id, price, name, img })
+
           const onRemoveCart = () => removeFromCart({ id: _id, price, name, img })
 
           return (
@@ -64,7 +64,7 @@ const TamalesIndex = ({ addToCart, cartItems, removeFromCart }) => {
           )
         })}
       </div>
-    </div>
+    </>
   )
 }
 

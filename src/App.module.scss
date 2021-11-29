@@ -1,0 +1,32 @@
+@import "./Components/Variables.scss";
+@import "~bootstrap/scss/bootstrap";
+
+// .container {
+//   width: auto;
+// }
+
+// .row{
+//   display:flex;
+//   flex-wrap: wrap;
+//   justify-content: space-around;
+//   align-items: center;
+//   width: auto;
+// }
+
+.nav{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  color: $negro;
+  // cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.imagen {
+  background-color: $blanco;
+  border-radius: 10px;
+  width: 100px;
+}

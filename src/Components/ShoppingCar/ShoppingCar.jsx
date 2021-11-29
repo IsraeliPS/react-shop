@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import styles from './ShoppingCar.module.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-// import { Link, useLocation } from 'react-router-dom'
-
 import {
   Dropdown,
   DropdownItem,
@@ -17,6 +15,20 @@ const ShoppingCar = ({ emptyCart, cartItems, deleteFromCart }) => {
   const openCloseDropdown = () => {
     setDropdown(!dropdown)
   }
+
+  const ItemsCar = () => {
+    let arrayItems = []
+
+    for (const key in cartItems) {
+      let postData = []
+      postData = { ...postData, id: key, name: cartItems[key].name, img: cartItems[key].img, price: cartItems[key].price }
+      arrayItems = [...arrayItems, postData]
+    }
+
+    return arrayItems
+  }
+
+  const arrayItems = ItemsCar()
 
   const totalPrice = Object.values(cartItems).reduce((sum, item) => sum + parseInt(item.price), 0)
 
@@ -40,14 +52,12 @@ const ShoppingCar = ({ emptyCart, cartItems, deleteFromCart }) => {
           {Object.keys(cartItems).length > 0
             ? (
               <>
-                {cartItems.map((item) => {
-                  // no esta regresando el id
-                  const { _id, name, img, price } = item
-                  const delFromCart = () => deleteFromCart({ id: _id })
-                  console.log(item)
+                {arrayItems.map((item) => {
+                  const { id, name, img, price } = item
+                  const delFromCart = () => deleteFromCart({ id })
 
                   return (
-                    <DropdownItem className={`${styles.cartitem}`} key={_id}>
+                    <DropdownItem className={`${styles.cartitem}`} key={id}>
                       <img
                         src={img}
                         className={`${styles.cartItemImg}`}

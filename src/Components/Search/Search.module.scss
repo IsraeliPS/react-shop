@@ -1,10 +1,12 @@
+@import "../Variables.scss";
+
 .bar {
   display: flex;
   justify-content:space-between;
   align-items: center;
-  background-color: white;
+  background-color: $blanco;
   border-radius: 5px;
-  width: 100%;
+  width: 70%;
   height: 50px;
 }
 
@@ -21,9 +23,10 @@
   font-weight: normal;
   font-style: normal;
   background: none;
-  color: inherit;
+  color: $negro;
+  font-size: 16px;
   outline: inherit;
-  width: auto;
+  width: 15rem;
   text-align:left;
 }
 

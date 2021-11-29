@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import Card from './CardAtole/CardAtole'
 
-const AtolesData = 'http://localhost:8000/products/'
+const AtolesData = 'https://api-cafe-tamales.herokuapp.com/api/atoles'
 
 const AtoleIndex = ({ addToCart, cartItems, removeFromCart }) => {
   const [atole, setAtole] = useState([])
@@ -16,9 +16,10 @@ const AtoleIndex = ({ addToCart, cartItems, removeFromCart }) => {
         res
           .json()
           .then((data) => {
-            console.log(data)
+            // console.log(data)
             if (ComponentExist) {
-              setAtole(data.payload)
+              // setAtole(data.payload)
+              setAtole(data.atol)
               setLoading(false)
               // console.log(setAtole)
             }
@@ -41,10 +42,11 @@ const AtoleIndex = ({ addToCart, cartItems, removeFromCart }) => {
   if (loading) return <h2>Please wait a moment...</h2>
 
   return (
-    <div className='container'>
+    <>
       <div className='row'>
         {atole.map((item) => {
-          const { _id, description: name, image: img, price } = item
+        // const { _id, description: name, image: img, price } = item
+          const { _id, name, img, price } = item
 
           const cantidad = cartItems[_id] ? cartItems[_id].qty : 0
 
@@ -65,7 +67,8 @@ const AtoleIndex = ({ addToCart, cartItems, removeFromCart }) => {
           )
         })}
       </div>
-    </div>
+    </>
+
   )
 }
 

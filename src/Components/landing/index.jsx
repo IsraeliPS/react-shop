@@ -52,7 +52,7 @@ const Index = () => {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.src} alt={item.altText} style={{ height: '300px', alignItems: 'center' }} />
+        <img src={item.src} alt={item.altText} style={{ borderRadius: '20px', width: '750px', height: '300px', alignItems: 'center' }} />
       </CarouselItem>
     )
   })
