@@ -1,6 +1,33 @@
-.carusel{
-    display:block;
-    width: 10px;
-    height: 10px;
-    padding: 30px;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import "../Variables.scss";
+
+
+
+.h2t{
+    
+    color: $walmart;
+    font-family: 'Dancing Script', cursive;
+    font-size: 54px;
+    display: block;
+    display: block;
+    background: url(https://cdn.shopify.com/s/files/1/0346/5933/t/5/assets/back_esp.png?1823313…) top right no-repeat;
+    width: 690
+px
+;
+    height: 164
+px
+;
+    font-size: 54px;
+    line-height: 50px;
+    padding: 30
+px
+ 0 0 60
+px
+!important;
+    margin: 0 0 30
+px
+ -60
+px
+;
 }
+
