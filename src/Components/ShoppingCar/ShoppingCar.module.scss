@@ -12,7 +12,6 @@
 }
 
 .button {
-  border: none;
   background: none;
   color: inherit;
   border: none;
@@ -22,6 +21,10 @@
     color: rgba(0, 0, 0, 0.54);
 
   }
+}
+
+.cantidad{
+  font-size: 20px;
 }
 
 .materialIcons {

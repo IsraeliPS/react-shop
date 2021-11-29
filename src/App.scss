@@ -1,0 +1,29 @@
+@import "./Components/Variables.scss";
+
+.container {
+  width: auto;
+}
+
+.row{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: auto;
+}
+
+nav {
+  width: 100%;
+  background-color:$azul-walmart;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav>div, nav>a {
+  color:$blanco;
+  cursor: pointer;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
