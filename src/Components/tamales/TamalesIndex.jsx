@@ -16,9 +16,10 @@ const TamalesIndex = ({ addToCart, cartItems, removeFromCart }) => {
           .json()
           .then((data) => {
             if (ComponentExist) {
-              // setTamal(data.tamal)
               setTamal(data.payload.productType)
+              console.log('hola')
               setLoading(false)
+              // setTamal(data.tamal)
             }
           })
           .catch(() => {
