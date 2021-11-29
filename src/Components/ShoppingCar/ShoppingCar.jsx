@@ -7,14 +7,13 @@ const ShoppingCar = ({ emptyCart, cartItems }) => {
 
   return (
     <div className={`${styles.ShoppingCar}`}>
-      <div>
-        <span className={`${styles.materialIcons}`}>shopping_cart</span>
-        <span className={`${styles.cantidad}`}>{totalItems}</span>
-        <div>Total a pagar: {totalPrice}</div>
-      </div>
-
+      <span className={`${styles.materialIcons}`}>shopping_cart</span>
+      <span className={`${styles.cantidad}`}>{totalItems}</span>
       <button className={`${styles.button} ${styles.materialIcons}`} onClick={emptyCart}>delete</button>
+      <br />
+      <div className={`${styles.texto}`}>Total a pagar: {totalPrice}</div>
     </div>
+
   )
 }
 
