@@ -2,31 +2,32 @@
 
 
 .card {
-  border-radius: 25px;
-  box-shadow: 0px -11px 11px 8px $sombra;
+  border:thin solid #dedede;
+  
   width: 15rem;
-  padding: 0 8px;
+  padding: 10px;
   margin: 10px;
+  background: white;
 
   .card_body {
     height: 180px;
-    background: $blanco;
-    border-radius: 0 0 25px 25px;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
   }
 
   .total {
     color: $negro;
     margin-right: 20px;
-    text-align: end;
-    font-size: 24px;
-    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+
   }
 
   .precio{
     color:$negro;
-    margin: 30px 0;
+    margin: 20px 0;
     font-size: 16px;
-    font-weight: bold;
     text-align: center;
     border-radius: 25px;
   }

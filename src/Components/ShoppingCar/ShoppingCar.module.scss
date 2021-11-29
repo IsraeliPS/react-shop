@@ -1,14 +1,10 @@
 .ShoppingCar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   text-align: center;
   align-items: center;
-  border-radius: 20px;
-  background-color: azure;
   z-index: 2;
-  width: 300px;
-  height: 80px;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
 }
 
 .button {
@@ -17,6 +13,7 @@
   border: none;
   cursor: pointer;
   outline: inherit;
+  color: white;
   &:hover{
     color: rgba(0, 0, 0, 0.54);
 
@@ -24,7 +21,8 @@
 }
 
 .cantidad{
-  font-size: 20px;
+  font-size: 12px;
+  color: white;
 }
 
 .materialIcons {
@@ -32,7 +30,7 @@
   font-weight: normal;
   z-index: 10;
   font-style: normal;
-  font-size: 36px; /* Preferred icon size */
+  font-size: 20px; /* Preferred icon size */
   display: inline-block;
   // line-height: 1;
   text-transform: none;
@@ -40,6 +38,7 @@
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+  color: white;
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
@@ -52,3 +51,10 @@
   /* Support for IE. */
   font-feature-settings: "liga";
 }
+
+
+.texto{
+  color: white;
+  width: 12rem;
+}
+

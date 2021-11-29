@@ -3,11 +3,12 @@
 .button{
     font-size: 12px;
     cursor: pointer;
-    background-color: $yellow;
-    border-radius: 15px;
+    background-color: white;
+    border: 2px solid $walmart;
     
-    padding: 8px 15px;
-    margin:10% 20px;
+    padding: 8px 50px;
+    margin:15px;
+    align-items: center;
 
     text-decoration: none;
     color:$negro;
