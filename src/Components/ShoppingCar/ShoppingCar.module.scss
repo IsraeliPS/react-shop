@@ -1,15 +1,4 @@
-.ShoppingCar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  text-align: center;
-  align-items: center;
-  border-radius: 20px;
-  background-color: azure;
-  z-index: 2;
-  width: 300px;
-  height: 80px;
-}
+@import "../Variables.scss";
 
 .button {
   background: none;
@@ -17,14 +6,22 @@
   border: none;
   cursor: pointer;
   outline: inherit;
+  color: $negro;
   &:hover{
     color: rgba(0, 0, 0, 0.54);
 
   }
 }
 
+.header{
+  display: flex;
+  justify-content: space-around;
+  color:$negro;
+}
+
 .cantidad{
-  font-size: 20px;
+  font-size: 12px;
+  color: $negro;
 }
 
 .cartitem {
@@ -49,12 +46,25 @@
   flex-direction: column;
 }
 
+.contador{
+  position: absolute;
+  top:10px;
+  left: 10px;
+  font-size: 12px;
+  padding: 0 5px;
+  background-color: $amarillo;
+  border-radius: 50px;
+  
+  
+}
+
 .materialIcons {
+  text-decoration: none;
   font-family: "Material Icons";
   font-weight: normal;
   z-index: 10;
   font-style: normal;
-  font-size: 36px; /* Preferred icon size */
+  font-size: 20px; /* Preferred icon size */
   display: inline-block;
   // line-height: 1;
   text-transform: none;
@@ -62,6 +72,7 @@
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+  color: $negro;
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
@@ -74,3 +85,10 @@
   /* Support for IE. */
   font-feature-settings: "liga";
 }
+
+
+.texto{
+  color: $negro;
+  width: 12rem;
+}
+

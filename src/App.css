@@ -1,3 +1,5 @@
+
+
 .container {
   width: auto;
 }
@@ -12,7 +14,7 @@
 
 nav {
   width: 100%;
-  background-color: gray;
+  background-color: #0176d5;
   display: flex;
   justify-content: space-around;
 }

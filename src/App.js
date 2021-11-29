@@ -38,6 +38,17 @@ function App () {
     }
   }
 
+  const deleteFromCart = (itemsObject) => {
+    console.log(itemsObject)
+    const existingItem = cartItems[itemsObject.id]
+    if (existingItem) {
+      const { [itemsObject.id]: omitir, ...restOfItems } = cartItems
+      setCartItems(restOfItems)
+    } else {
+      console.log('Error al restar:', itemsObject)
+    }
+  }
+
   const removeFromCart = (itemsObject) => {
     const existingItem = cartItems[itemsObject.id]
     if (existingItem) {
@@ -66,12 +77,23 @@ function App () {
   return (
     <div>
       <nav>
-        <Link to='/'>Inicio</Link>
-        <Link to='/tamales'>Tamales</Link>
-        <Link to='/atoles'>Atoles</Link>
+        <Link to='/'>
+          <img style={{ width: 100 }} src='https://userscontent2.emaze.com/images/0e4da0d7-1e34-42c4-9979-5003eb399ac2/d4b3b8de43ca34af4387cda9a6ff382c.png' alt='logo' />
+        </Link>
+        <Search />
+        <ShoppingCar
+          emptyCart={emptyCart} cartItems={cartItems}
+          deleteFromCart={deleteFromCart}
+        />
+
       </nav>
-      <Search />
-      <ShoppingCar emptyCart={emptyCart} cartItems={cartItems} />
+
+      <Link to='/tamales'>Tamales</Link>
+      <Link to='/atoles'>Atoles</Link>
+      <Link to='/Productos/:id'>Productos/:id</Link>
+
+      <div />
+
       <Routes>
         <Route path='/' element={<Index cartItems={cartItems} />} />
         <Route

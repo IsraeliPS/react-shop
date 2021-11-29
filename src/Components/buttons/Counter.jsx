@@ -11,10 +11,12 @@ const Counter = ({ onAddToCart, onRemoveCart, cantidad = 0 }) => {
   }
 
   return (
-    <div className={`${styles.styleContainer}`}>
-      <button onClick={handlerRest}> - </button>
-      <span className={`${styles.styleQty}`}>{cantidad}</span>
-      <button onClick={handlerAdd}> + </button>
+    <div gap={3} className='container'>
+      <div className={`${styles.styleContainer}`}>
+        <button className={`${styles.styleButton}`} onClick={handlerRest}> - </button>
+        <span className={`${styles.styleQty}`}>{cantidad}</span>
+        <button className={`${styles.styleButton}`} onClick={handlerAdd}> + </button>
+      </div>
     </div>
   )
 }
