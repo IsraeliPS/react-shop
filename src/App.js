@@ -16,7 +16,12 @@ function App () {
     if (!existingItem) {
       const cart = {
         ...cartItems,
-        [itemsObject.id]: { qty: 1, price: parseInt(itemsObject.price) }
+        [itemsObject.id]: {
+          qty: 1,
+          price: parseInt(itemsObject.price),
+          name: itemsObject.name,
+          img: itemsObject.img
+        }
       }
       setCartItems(cart)
     } else {
@@ -24,7 +29,9 @@ function App () {
         ...cartItems,
         [itemsObject.id]: {
           qty: existingItem.qty + 1,
-          price: existingItem.price + parseInt(itemsObject.price)
+          price: existingItem.price + parseInt(itemsObject.price),
+          name: itemsObject.name,
+          img: itemsObject.img
         }
       }
       setCartItems(cart)
@@ -42,7 +49,9 @@ function App () {
           ...cartItems,
           [itemsObject.id]: {
             qty: existingItem.qty - 1,
-            price: existingItem.price - parseInt(itemsObject.price)
+            price: existingItem.price - parseInt(itemsObject.price),
+            name: itemsObject.name,
+            img: itemsObject.img
           }
         }
         setCartItems(cart)

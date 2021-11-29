@@ -1,14 +1,14 @@
-import React from "react";
-import styles from "./Counter.module.scss";
+import React from 'react'
+import styles from './Counter.module.scss'
 
 const Counter = ({ onAddToCart, onRemoveCart, cantidad = 0 }) => {
   const handlerAdd = () => {
-    onAddToCart();
-  };
+    onAddToCart()
+  }
 
   const handlerRest = () => {
-    onRemoveCart();
-  };
+    onRemoveCart()
+  }
 
   return (
     <div className={`${styles.styleContainer}`}>
@@ -16,7 +16,7 @@ const Counter = ({ onAddToCart, onRemoveCart, cantidad = 0 }) => {
       <span className={`${styles.styleQty}`}>{cantidad}</span>
       <button onClick={handlerAdd}> + </button>
     </div>
-  );
-};
+  )
+}
 
-export default Counter;
+export default Counter

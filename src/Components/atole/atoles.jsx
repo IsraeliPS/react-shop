@@ -46,8 +46,8 @@ const AtoleIndex = ({ addToCart, cartItems, removeFromCart }) => {
 
           const cantidad = cartItems[_id] ? cartItems[_id].qty : 0
 
-          const onAddToCart = () => addToCart({ id: _id, price, img })
-          const onRemoveCart = () => removeFromCart({ id: _id, price })
+          const onAddToCart = () => addToCart({ id: _id, price, name, img })
+          const onRemoveCart = () => removeFromCart({ id: _id, price, name, img })
 
           return (
             <Card

@@ -1,61 +1,63 @@
-// import React, { useState } from 'react'
-// import styles from './ShoppingCar.module.scss'
-// import 'bootstrap/dist/css/bootstrap.min.css'
+import React, { useState } from 'react'
+import styles from './ShoppingCar.module.scss'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 // import { Link, useLocation } from 'react-router-dom'
 
-// import {
-//   Badge,
-//   Dropdown,
-//   DropdownItem,
-//   DropdownToggle,
-//   DropdownMenu
-// } from 'reactstrap'
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownToggle,
+  DropdownMenu
+} from 'reactstrap'
 
-// const ShoppingCar = ({ emptyCart, cartItems }) => {
-//   const [dropdown, setDropdown] = useState(false)
-//   const totalPrice = Object.values(cartItems).reduce(
-//     (sum, item) => sum + parseInt(item.price),
-//     0
-//   )
-//   const totalItems = Object.values(cartItems).reduce(
-//     (sum, item) => sum + parseInt(item.qty),
-//     0
-//   )
+const ShoppingCar = ({ emptyCart, cartItems }) => {
+  const [dropdown, setDropdown] = useState(false)
 
-//   const openCloseDropdown = () => {
-//     setDropdown(!dropdown)
-//   }
-//   // let cantidad = 0;
-//   // let total = 0;
-//   // for (let val in cartItems) {
-//   //   total += parseInt(cartItems[val].price);
-//   //   cantidad += cartItems[val].qty;
-//   // }
+  const openCloseDropdown = () => {
+    setDropdown(!dropdown)
+  }
 
-//   return (
-//     <>
-//       <Dropdown isOpen={dropdown} toggle={openCloseDropdown}>
-//         <DropdownToggle caret>
-//           Dropdown
-//         </DropdownToggle>
-//         <DropdownMenu>
-//           <DropdownItem header>
-//             Productos
-//           </DropdownItem>
-//           <DropdownItem divider />
-//           {cartItems.map((item) => {
-//             const { _id, name, img, price } = item
-//             return (
-//               <DropdownItem>
-//                 <Badge>{item.length}</Badge>
-//               </DropdownItem>
-//             )
-//           })}
-//         </DropdownMenu>
-//       </Dropdown>
-//     </>
-//   )
-// }
+  console.log(Object.keys(cartItems).length)
+  return (
+    <>
+      <Dropdown isOpen={dropdown} toggle={openCloseDropdown}>
+        <DropdownToggle caret>
+          Dropdown
+        </DropdownToggle>
+        <DropdownMenu>
+          <DropdownItem header>
+            Productos
+          </DropdownItem>
+          <DropdownItem divider />
+          {Object.keys(cartItems).length > 0
+            ? (
+              <>
+                {Object.values(cartItems).map((item) => {
+                  const { _id, name, img, price } = item
+                  return (
+                    <DropdownItem className={`${styles.cartitem}`} key={_id}>
+                      <img
+                        src={img}
+                        className={`${styles.cartItemImg}`}
+                        alt={name}
+                      />
+                      <div className={`${styles.cartItemDetail}`}>
+                        <span>{name}</span>
+                        <span>$ {price}</span>
+                      </div>
+                    </DropdownItem>
+                  )
+                })}
+              </>
+              )
+            : (
+              <span style={{ padding: 10 }}>El carrito esta vacío!</span>
+              )}
+        </DropdownMenu>
+      </Dropdown>
+    </>
+  )
+}
 
-// export default ShoppingCar
+export default ShoppingCar
