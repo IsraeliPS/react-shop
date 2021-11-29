@@ -1,5 +1,4 @@
 import React from 'react'
-import { Row } from 'reactstrap'
 import styles from './Counter.module.scss'
 
 const Counter = ({ onAddToCart, onRemoveCart, cantidad = 0 }) => {

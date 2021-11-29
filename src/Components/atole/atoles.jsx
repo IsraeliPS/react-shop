@@ -10,11 +10,6 @@ const AtoleIndex = ({ addToCart, cartItems, removeFromCart }) => {
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    // const fetchGet = {
-    //   method: 'GET'
-    //   // body: '',
-    //   // headers: ''
-    // }
     let ComponentExist = true
     fetch(AtolesData)
       .then((res) => {
@@ -25,7 +20,7 @@ const AtoleIndex = ({ addToCart, cartItems, removeFromCart }) => {
             if (ComponentExist) {
               setAtole(data.payload)
               setLoading(false)
-              console.log(setAtole)
+              // console.log(setAtole)
             }
           })
           .catch(() => {
@@ -53,8 +48,8 @@ const AtoleIndex = ({ addToCart, cartItems, removeFromCart }) => {
 
           const cantidad = cartItems[_id] ? cartItems[_id].qty : 0
 
-          const onAddToCart = () => addToCart({ id: _id, price, img })
-          const onRemoveCart = () => removeFromCart({ id: _id, price })
+          const onAddToCart = () => addToCart({ id: _id, price, name, img })
+          const onRemoveCart = () => removeFromCart({ id: _id, price, name, img })
 
           return (
             <Card

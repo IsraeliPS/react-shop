@@ -1,11 +1,4 @@
-.ShoppingCar {
-  text-align: center;
-  align-items: center;
-  z-index: 2;
-  width: 200px;
-  height: 50px;
-  font-size: 20px;
-}
+@import "../Variables.scss";
 
 .button {
   background: none;
@@ -13,19 +6,60 @@
   border: none;
   cursor: pointer;
   outline: inherit;
-  color: white;
+  color: $negro;
   &:hover{
     color: rgba(0, 0, 0, 0.54);
 
   }
 }
 
+.header{
+  display: flex;
+  justify-content: space-around;
+  color:$negro;
+}
+
 .cantidad{
   font-size: 12px;
-  color: white;
+  color: $negro;
+}
+
+.cartitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+  margin-bottom: 20px;
+}
+
+.cartItemImg {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.cartItemDetail {
+  display: flex;
+  flex: 1;
+  padding: 0 20px;
+  flex-direction: column;
+}
+
+.contador{
+  position: absolute;
+  top:10px;
+  left: 10px;
+  font-size: 12px;
+  padding: 0 5px;
+  background-color: $amarillo;
+  border-radius: 50px;
+  
+  
 }
 
 .materialIcons {
+  text-decoration: none;
   font-family: "Material Icons";
   font-weight: normal;
   z-index: 10;
@@ -38,7 +72,7 @@
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
-  color: white;
+  color: $negro;
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
@@ -54,7 +88,7 @@
 
 
 .texto{
-  color: white;
+  color: $negro;
   width: 12rem;
 }
 

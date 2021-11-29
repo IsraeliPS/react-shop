@@ -16,7 +16,12 @@ function App () {
     if (!existingItem) {
       const cart = {
         ...cartItems,
-        [itemsObject.id]: { qty: 1, price: parseInt(itemsObject.price) }
+        [itemsObject.id]: {
+          qty: 1,
+          price: parseInt(itemsObject.price),
+          name: itemsObject.name,
+          img: itemsObject.img
+        }
       }
       setCartItems(cart)
     } else {
@@ -24,10 +29,23 @@ function App () {
         ...cartItems,
         [itemsObject.id]: {
           qty: existingItem.qty + 1,
-          price: existingItem.price + parseInt(itemsObject.price)
+          price: existingItem.price + parseInt(itemsObject.price),
+          name: itemsObject.name,
+          img: itemsObject.img
         }
       }
       setCartItems(cart)
+    }
+  }
+
+  const deleteFromCart = (itemsObject) => {
+    console.log(itemsObject)
+    const existingItem = cartItems[itemsObject.id]
+    if (existingItem) {
+      const { [itemsObject.id]: omitir, ...restOfItems } = cartItems
+      setCartItems(restOfItems)
+    } else {
+      console.log('Error al restar:', itemsObject)
     }
   }
 
@@ -42,7 +60,9 @@ function App () {
           ...cartItems,
           [itemsObject.id]: {
             qty: existingItem.qty - 1,
-            price: existingItem.price - parseInt(itemsObject.price)
+            price: existingItem.price - parseInt(itemsObject.price),
+            name: itemsObject.name,
+            img: itemsObject.img
           }
         }
         setCartItems(cart)
@@ -61,7 +81,10 @@ function App () {
           <img style={{ width: 100 }} src='https://userscontent2.emaze.com/images/0e4da0d7-1e34-42c4-9979-5003eb399ac2/d4b3b8de43ca34af4387cda9a6ff382c.png' alt='logo' />
         </Link>
         <Search />
-        <ShoppingCar emptyCart={emptyCart} cartItems={cartItems} />
+        <ShoppingCar
+          emptyCart={emptyCart} cartItems={cartItems}
+          deleteFromCart={deleteFromCart}
+        />
 
       </nav>
 
