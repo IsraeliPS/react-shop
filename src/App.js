@@ -90,7 +90,7 @@ function App () {
       <div className={`${styles.links}`}>
         <Link to='/tamales' className={`${styles.link}`}>Tamales</Link>
         <Link to='/atoles' className={`${styles.link}`}>Atoles</Link>
-        <Link to='/Productos/:id' className={`${styles.links}`}>Productos/:id</Link>
+        <Link to='/Productos/:id' className={`${styles.link}`}>Productos/:id</Link>
       </div>
 
       <Routes>

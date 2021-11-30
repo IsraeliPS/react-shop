@@ -23,16 +23,22 @@
 }
 
 .links{
-  background-color:$walmart;
+  background-color:white;
   width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items: center;
+  box-shadow: 0px 10px 10px -6px $sombra;
 }
 
 .link{
   text-decoration: none;
   text-emphasis: none;
-  color:$negro;
+  color:$walmart;
+  font-weight: bold;
   padding: 10px 10px;
-  &:hover{
-    color:$blanco
-  }
+ // &:hover{
+   // color:$blanco
+ // }
 }
